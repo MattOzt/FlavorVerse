@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg text-white font-sans m-0 min-h-screen;
+  background-image:
+    radial-gradient(circle at center, rgba(26, 26, 26, 0.65) 0%, rgba(15, 15, 15, 1) 68%),
+    radial-gradient(circle at 20% -10%, rgba(244, 177, 131, 0.1), transparent 40%);
+  background-attachment: fixed;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+@layer components {
+  .fv-card {
+    @apply rounded-2xl border border-zinc-800 bg-surface-elevated shadow-lg backdrop-blur-sm;
+    border-color: rgba(39, 39, 42, 0.8);
+    background-color: rgba(29, 29, 29, 0.8);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  }
+
+  .fv-input {
+    @apply w-full rounded-xl border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none transition focus:border-accent focus:ring-2;
+    border-color: rgba(63, 63, 70, 0.9);
+    background-color: rgba(9, 9, 11, 0.9);
+  }
+
+  .fv-input:focus {
+    border-color: #f4b183;
+    --tw-ring-color: rgba(244, 177, 131, 0.2);
+  }
+
+  .fv-btn-primary {
+    @apply rounded-xl bg-accent px-4 py-2 font-semibold text-zinc-900 transition hover:bg-accent-deep disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .fv-btn-secondary {
+    @apply rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-2 font-medium text-zinc-100 transition hover:text-accent;
+    background-color: rgba(24, 24, 27, 0.8);
+  }
+
+  .fv-btn-secondary:hover {
+    border-color: rgba(244, 177, 131, 0.6);
+  }
+}
